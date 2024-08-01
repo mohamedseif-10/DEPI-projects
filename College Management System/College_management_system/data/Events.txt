@@ -1,0 +1,8 @@
+CS,Introduction to Quantum Computing,2024-08-15,Room 101,A beginner-friendly seminar on the principles of quantum computing.
+CS,Machine Learning Workshop,2024-09-10,Lab 202,Hands-on workshop to build machine learning models using Python.
+IS,Enterprise Resource Planning Systems,2024-08-22,Room 301,A lecture on the latest trends in ERP systems.
+IS,Data Management Strategies,2024-09-18,Room 303,Workshop on effective data management strategies for businesses.
+AI,Deep Learning Bootcamp,2024-08-25,Lab 401,An intensive bootcamp covering deep learning concepts and applications.
+AI,Natural Language Processing Seminar,2024-09-05,Room 402,Seminar on the latest advancements in NLP.
+DS,Data Visualization Techniques,2024-08-20,Lab 501,Workshop on creating effective data visualizations using various tools.
+DS,Big Data Analytics,2024-09-12,Room 503,Lecture on techniques and tools for analyzing large datasets.
