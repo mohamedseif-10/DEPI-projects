@@ -1,5 +1,6 @@
 import time
-import re
+import regex as re
+import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -50,7 +51,7 @@ for page in range(numPages):
             jobType = job.find_element(By.CLASS_NAME, "css-1ve4b75").text
 
             try:
-                element = job.find_element(By.XPATH,"/html/body/div[1]/div/div[3]/div/div/div[2]/div[1]/div/div[2]/div[2]",)
+                element = job.find_element(By.XPATH,"/html/body/div[1]/div/div[3]/div/div/div[2]/div[1]/div/div[2]/div[2]")
                 links = element.find_elements(By.TAG_NAME, "a")
                 texts = []
                 for link in links:
@@ -58,7 +59,7 @@ for page in range(numPages):
                 all_text = " ".join(texts)
                 Requirements = re.sub(r"[^\x00-\x7F]+", " ", all_text)
                 Requirements = re.sub(r"\s+-\s+", ", ", Requirements).strip()
-                Requirements = re.sub(r"\s+", " ", Requirements)
+                Requirements = re.sub(r"\s+", " ,", Requirements)
 
             except Exception as e:
                 print(f"Error finding or processing Requirements: {e}")
@@ -70,9 +71,23 @@ for page in range(numPages):
         except Exception as e:
             print(f"Error extracting job data: {e}")
 
+
+df = pd.DataFrame(
+    jobs,
+    columns=[
+        "Job Title",
+        "Company Name",
+        "Company Location",
+        "Job Type",
+        "Requirements",
+    ],
+)
+
+df.to_csv("jobs_data.csv", index=False)
+
 for job in jobs:
-    print("--------------------------------------------------------------------------------")
-    print(f"Job Title: {job[0]} \nCompany Name: {job[1]} \nCompany Location: {job[2]} \nJob Type: {job[3]} \nRequirements: {job[4]}")
+   print("--------------------------------------------------------------------------------")
+   print(f"Job Title: {job[0]} \nCompany Name: {job[1]} \nCompany Location: {job[2]} \nJob Type: {job[3]} \nRequirements: {job[4]}")
 print("--------------------------------------------------------------------------------")
 
 
