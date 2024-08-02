@@ -186,7 +186,7 @@ class CollegeManagement:
                             print("-------------------------------------------------")
 
                     elif userInput == "2":
-                        pass
+                        Hostel.HostelDetails()
                     elif userInput == "3":
                         break
                     else:
@@ -243,7 +243,7 @@ class CollegeManagement:
                             print("Invalid choice!")
                             print("-------------------------------------------------")
                     elif userInput == "2":
-                        Staff.StaffDetails()
+                        Staff.staffDetails()
                     elif userInput == "3":
                         break
                     else:
