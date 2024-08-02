@@ -1,7 +1,6 @@
 import datetime
 from allModules import *
 
-
 def addUGStudent(studentName, gender, year, classId, payment):
     studentObject = UGStudent(studentName, gender, year, classId, payment)
     return studentObject
